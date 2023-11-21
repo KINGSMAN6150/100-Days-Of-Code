@@ -1,0 +1,23 @@
+// So as our coding culture says to start with Hello world program in every language so I'll Start by writing hello world program...:
+
+1. Javascript
+console.log("Hello world");
+
+2. C
+#include<stdio.h>
+int main(){
+printf("Hello World!");
+return 0;
+}
+
+3. Html
+<html>
+<head>
+<title>First Page</title>
+</head>
+<body>
+<h1>Hello World!!</h1>
+</body>
+</html>
+
+//There is also c++ and bin but i'll not waste the time cuz I have lot to learn so Over'n'out!!

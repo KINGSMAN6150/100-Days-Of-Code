@@ -1,3 +1,5 @@
+this is what i learned 
+app.js 
 const http = require("http");
 
 const routes = require("./routes");
@@ -5,3 +7,42 @@ const routes = require("./routes");
 const server = http.createServer(routes);
 
 server.listen(3000);
+
+routes.js
+const fs = require("fs");
+const querystring = require('querystring');
+reqListner = (req, res) => {
+    const url = req.url;
+    const method = req.method;
+    if(url === '/'){
+        res.setHeader("Greetings", 'text/html');
+        res.write('<html>');
+        res.write('<head><title>Greetings!!</title></head>');
+        res.write('<body><h1>Happy Coding!!<br><h2>Go On developer!!<br>we all know you can do it!!</h2></h1><br><a href="/users">User List</a><h1>Enter your username</h1><form action="/create.user" method="post"><label for="username">Username:</label><input type="text" id="username" name="username" required><br><button type="submit">Submit</button></form></body>');
+        res.write('</html>');
+        return res.end();
+    }
+    if(url === '/users'){
+        res.setHeader("Content-Type", 'text/html');
+        res.write('<html>');
+        res.write('<head><title>Users List!!</title></head>');
+        res.write('<body><h1>User Using Our Products:</h1><br><ul><li>rk101  </li><li>ac002</li><li>xy234</li><li>oq029</li><li>kd726</li><li>bd027</li><li>tn385</li></ul><a href="/">Homepage</a></body>');
+        res.write('</html>');
+        return res.end();
+    }
+    if (url === '/create.user' && method === 'POST') {
+        let body = '';
+        req.on('data', (chunk) => {
+          body += chunk;
+        });
+        req.on('end', () => {
+          const postData = querystring.parse(body);
+          const username = postData.username;
+          console.log(`Received username: ${username}\n`);
+        
+          res.write(`Username : ${username}\n`);
+          res.end('User created successfully!');
+        });
+}};
+
+module.exports = reqListner;

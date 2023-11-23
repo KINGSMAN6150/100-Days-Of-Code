@@ -1,0 +1,15 @@
+today i learned about express and some modules so i am gonna just type that not the css or html code
+
+//
+const express = require('express');
+
+const path = require('path');
+
+const adminRoutes = require('./routes/admin.js');
+
+const shopRoutes = require('./routes/shop.js');
+
+const bodyParser = require('body-parser');
+
+const app = express();
+//

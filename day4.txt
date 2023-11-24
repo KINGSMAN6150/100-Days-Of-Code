@@ -1,0 +1,78 @@
+//i didnt find it so So I found how to keep a cascading style code in files and then how to import it from that file to a main code. That was, I guess, real helpful, though I don't, I'm not sure that I would be able to use it, coz I'm not going inside css. I might know that how to get it done But, yeah, that only because the person who was teaching me, I was teaching this one how to style up, how to navigate bar and all that. So I change the colour font and background colour, then margin and other stuffs. So you can say, I did a great I did a some good work, but it was not that helpful to me And I will keep going to put some ceases and html code, which I wrote. I'm going to just put a single app .js file, or I will just put the that thing with what is same I will try to put what I can So
+js code
+
+app.use((req, res, next) => {
+    res.status(404).sendFile(path.join(__dirname,'routes', 'views', 'error.html'));
+});
+
+
+html code
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add-Product</title>
+    <link rel="stylesheet" href="/css/main.css">
+    
+</head>
+<body>
+   <header class="main-header">
+    <nav class="main-header_nav">
+        <ul class="main-header_item-list">
+            <li class="main-header_item"><a class="active" href="/">Shop</a></li>
+            <li class="main-header_item"><a class="active" href="/add-product">Add Product</a></li>
+        </ul>
+    </nav>
+   </header> 
+
+   <main>
+    <h1>My product</h1>
+    <p>List of all elements</p>
+   </main>
+</body>
+</html>
+
+css code
+
+        body {
+            padding: 0;
+            margin: 0; 
+            font-family: sans-serif;
+        }
+        main {
+            padding: 1rem;
+        }
+        .main-header {
+            width: 100%;
+            height: 3.5rem;
+            background-color: #800075;
+            padding: 0 1.5rem;
+        }
+        .main-header_item-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .main-header_item {
+            margin: 0% 1rem;
+            padding: 0%;
+        }
+        .main-header_item a {
+            text-decoration: none;
+            color: white;
+        }
+        .main-header_nav {
+            height: 100% ;
+            display: flex;
+            align-items: center;
+        }
+
+        .main-header_item a:hover,
+        .main-header_item a:active,
+        .main-header_item a.active{
+            color: blue;
+        }
+    

@@ -1,0 +1,42 @@
+so today i did a project on using public and util path also the views folder
+
+app01.js
+const express = require('express');
+
+const path = require('path');
+
+const usersRoutes = require('./routes/users.js');
+
+const bodyParser = require('body-parser');
+
+const app = express();
+
+app.use(usersRoutes);
+
+app.use(bodyParser.urlencoded({extended: false}));
+
+app.use(express.static(path.join(__dirname,'public')));
+
+app.use((req, res, next) => {
+    res.sendFile(path.join(__dirname,'routes', 'views', 'home.html'));
+});
+
+app.listen(3000); 
+
+
+users.js
+const path = require('path');
+
+const express = require('express');
+
+const router = express.Router();
+
+const rootDir = require('../util/path');
+
+router.use('/users', (req, res, next) => {
+    res.sendFile(path.join(__dirname, 'views', 'users.html'));
+});
+
+module.exports = router;
+
+html and css is easy so without wasting time see you tommorow......
